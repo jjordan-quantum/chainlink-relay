@@ -38,6 +38,12 @@ app.post("/test", function(req, res) {
     res.sendStatus(200);
 });
 
+/** Endpoint to echo callback from chainlink node */
+app.post("/echo", function(req, res) {
+    console.log(res.body.message);
+    res.sendStatus(200);
+})
+
 /** Function to call the chainlink node and run a job */
 function callChainlinkNode(job_id) {
     var url_addon = '/v2/specs/'+ job_id + '/runs'
