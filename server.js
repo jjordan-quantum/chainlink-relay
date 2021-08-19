@@ -40,7 +40,7 @@ app.post("/test", function(req, res) {
 
 /** Endpoint to echo callback from chainlink node */
 app.post("/echo", function(req, res) {
-    console.log(res.body.message);
+    console.log(req.body.message);
     res.sendStatus(200);
 })
 
