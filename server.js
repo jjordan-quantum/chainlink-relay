@@ -110,8 +110,14 @@ app.post("/stop", function(req, res) {
  */
 app.post("/callback", function(req, res) {
 
+    // get job ID from request
+    let jobID = req.body.data.callbackJobId;
+
+    // log request for callback job ID
+    console.log("Request received from node to callback with job ID: " + jobID);
+
     // call chainlink node with callbackJobId from request body
-    callChainlinkNode(req.body.data.callbackJobId);
+    callChainlinkNode(jobID);
     res.sendStatus(200);
 });
 
