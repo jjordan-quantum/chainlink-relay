@@ -74,11 +74,6 @@ app.post("/start", function(req, res) {
     let contractAddress = req.body.data.contractAddress;
     let computeId = req.body.data.computeId;
 
-    // debugging / logging
-    console.log("STARTING compute job with the following arguments:");
-    console.log("Contract Address: " + contractAddress);
-    console.log("Compute Job ID: " + computeId);
-
     // create and start compute job
     compute.addComputeJob(contractAddress, computeId);
 
